@@ -1,4 +1,4 @@
-import { Component, useState } from 'react';
+import {useState } from 'react';
 import Button from './Button';
 import Name from './Name';
 import Number from './Number';
