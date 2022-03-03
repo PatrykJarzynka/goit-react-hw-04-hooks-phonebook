@@ -9,6 +9,11 @@ const FancyInput = styled.input({
 });
 
 function Name({ name, onChange }) {
+
+  const handleClick = e => {
+    e.target.value = '';
+  };
+
   return (
     <FancyInput
       type="text"
@@ -18,6 +23,7 @@ function Name({ name, onChange }) {
       required
       value={name}
       onChange={onChange}
+      onClick={handleClick}
     />
   );
 }
