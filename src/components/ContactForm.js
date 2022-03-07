@@ -1,4 +1,4 @@
-import {useState } from 'react';
+import { useState } from 'react';
 import Button from './Button';
 import Name from './Name';
 import Number from './Number';
@@ -24,6 +24,8 @@ function ContactForm({ onSubmit }) {
   const handleSubmit = event => {
     event.preventDefault();
     onSubmit(name, number);
+    setName('');
+    setNumber('');
   };
 
   const handleChange = event => {
@@ -35,7 +37,7 @@ function ContactForm({ onSubmit }) {
   return (
     <FancyForm onSubmit={handleSubmit}>
       <StyledSpan>Name</StyledSpan>
-      <Name type="text" value={name} onChange={handleChange} />
+      <Name type="text" name={name} onChange={handleChange} />
       <StyledSpan>Number</StyledSpan>
       <Number type="tel" number={number} onChange={handleChange} />
       <Button type="submit" label={'Add contact'} />

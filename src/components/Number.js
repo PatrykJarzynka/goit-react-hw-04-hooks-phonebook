@@ -9,11 +9,6 @@ const FancyInput = styled.input({
 });
 
 function Number({ number, onChange }) {
-
-  const handleClick = e => {
-    e.target.value = '';
-  };
-
   return (
     <FancyInput
       type="tel"
@@ -21,9 +16,8 @@ function Number({ number, onChange }) {
       pattern="\+?\d{1,4}?[-.\s]?\(?\d{1,3}?\)?[-.\s]?\d{1,4}[-.\s]?\d{1,4}[-.\s]?\d{1,9}"
       title="Phone number must be digits and can contain spaces, dashes, parentheses and can start with +"
       required
-      number={number}
+      value={number}
       onChange={onChange}
-      onClick={handleClick}
     />
   );
 }
