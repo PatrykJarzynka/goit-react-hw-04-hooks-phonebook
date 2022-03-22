@@ -14,6 +14,8 @@ function App(props){
   const [contacts, setContacts] = useState([]);
   const [filter, filterContacts] = useState("");
 
+  console.log(filter)
+
   useEffect(() => {
     const localContacts = localStorage.getItem('contacts');
     const parsedContacts = JSON.parse(localContacts);
